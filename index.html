@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Champions Stats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/valorant-logo.png" alt="Valorant Logo" class="logo">
+            <h1>Valorant Champions Stats</h1>
+            <img src="images/vct-logo.webp" alt="Valorant Champions Tour Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="tournaments.html">Tournaments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-images">
+                <img src="images/hero-image1.jpg" alt="Hero 1" class="hero-image">
+                <img src="images/hero-image2.jpg" alt="Hero 2" class="hero-image">
+                <img src="images/hero-image3.jpg" alt="Hero 3" class="hero-image">
+                <img src="images/hero-image4.avif" alt="Hero 4" class="hero-image">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+            <h2>Welcome to Valorant Champions Stats</h2>
+            <p>Explore the teams, players, and results from Valorant Champions 2021-2024.</p>
+        </section>
+
+        <section class="overview">
+            <h2>Valorant Champions Overview</h2>
+            <p>Valorant Champions is the premier annual tournament where the best teams from around the world compete
+                for glory. Since its inception in 2021, it has become the ultimate battleground for tactical FPS
+                supremacy.</p>
+        </section>
+
+        <section class="featured">
+            <h2>Featured Teams & Players</h2>
+            <div class="team-player-grid">
+                <div class="team">
+                    <h3>Team Example</h3>
+                    <p>2022 Champions</p>
+                </div>
+                <div class="player">
+                    <h3>Player Example</h3>
+                    <p>MVP of 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Start Exploring</h2>
+            <p>Check out the stats and histories of your favorite teams and players.</p>
+            <a href="teams.html" class="btn">View Teams</a>
+            <a href="players.html" class="btn">View Players</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Valorant Champions Stats. All rights reserved.</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
