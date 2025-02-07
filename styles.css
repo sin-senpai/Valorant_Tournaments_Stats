@@ -46,15 +46,19 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+nav ul li a:hover {
+    color: white;
+    transition: 0.3s ease-in-out;
+}
 
 /* Hero Section */
-.hero {
+/* .hero{
     position: relative;
     text-align: center;
     padding: 50px 20px;
-}
+} */
 
-.hero-images {
+/* .hero-images {
     width: 80%;
     height: 300px;
     margin: 0 auto;
@@ -67,20 +71,18 @@ nav ul li a {
     position: absolute;
     top: 0;
     left: 2%;
-    /* Adjust this value to decrease width from the left side */
     transition: opacity 1s ease-in-out;
     z-index: -1;
     border: 3px solid transparent;
-    /* Initially no border */
     border-radius: 10px;
 }
 
 .hero-image.active {
     opacity: 1;
     z-index: 1;
-}
+} */
 
-.hero-image:hover {
+/* .hero-image:hover {
     box-shadow: 0 0 10px 4px rgba(255, 70, 85, 0.8);
     border-color: rgba(255, 70, 85, 0.8);
     transition: 0.5s ease-in-out;
@@ -96,9 +98,9 @@ button {
     font-size: 18px;
     cursor: pointer;
     z-index: 10;
-}
+} */
 
-button:hover {
+/* button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -108,8 +110,41 @@ button:hover {
 
 .next {
     right: 50px;
+} */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
 }
 
+.hero-video {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 550px; 
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid transparent;
+
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.5s ease, box-shadow 0.5s ease-out;
+}
+
+.hero-video:hover {
+    opacity: 1;
+    box-shadow: 0 0 20px 10px rgba(255, 70, 85, 0.8);
+    border-color: rgba(255, 70, 85, 0.8);
+    transition: 0.5s ease-in-out;
+}
+.hero-video:hover video {
+    opacity: 1; 
+}
 
 .hero h2 {
     font-size: 2.5em;
@@ -119,7 +154,7 @@ button:hover {
 
 .hero p {
     font-size: 1.2em;
-}
+} 
 
 /* Overview Section */
 .overview {
@@ -187,4 +222,69 @@ button:hover {
 
 .cta .btn:hover {
     background-color: #292929;
+}
+
+
+
+
+/* teams section */
+
+.teams {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.teams-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 6px rgba(255, 70, 85, 0.8);
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.view-more {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.view-more:hover {
+    background-color: #e04050;
+}
+.pacific-teams{
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 20px;
+}
+.pacific-teams img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }

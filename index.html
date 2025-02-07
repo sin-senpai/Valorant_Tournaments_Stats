@@ -26,7 +26,7 @@
     </header>
 
     <main>
-        <section class="hero">
+        <!-- <section class="hero">
             <div class="hero-images">
                 <img src="images/hero-image1.jpg" alt="Hero 1" class="hero-image">
                 <img src="images/hero-image2.jpg" alt="Hero 2" class="hero-image">
@@ -34,7 +34,15 @@
                 <img src="images/hero-image4.avif" alt="Hero 4" class="hero-image">
             </div>
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button> -->
+        <!--hero images code, might use it later-->
+        <section class="hero">
+            <div class="hero-video">
+                <video muted loop poster="images/video-poster.png" preload="auto">
+                    <source src="images/hero-video.webm" type="video/webm">
+                    <source src="images/hero-video.mp4" type="video/mp4">
+                </video>
+            </div>
 
             <h2>Welcome to Valorant Champions Stats</h2>
             <p>Explore the teams, players, and results from Valorant Champions 2021-2024.</p>
@@ -42,9 +50,8 @@
 
         <section class="overview">
             <h2>Valorant Champions Overview</h2>
-            <p>Valorant Champions is the premier annual tournament where the best teams from around the world compete
-                for glory. Since its inception in 2021, it has become the ultimate battleground for tactical FPS
-                supremacy.</p>
+            <p>VALORANT Champions (Also known as VCT Champions) is the crowning event of the VALORANT esports
+                calendar. Featuring sixteen teams, with four representatives from each region.</p>
         </section>
 
         <section class="featured">
@@ -74,4 +81,5 @@
     </footer>
 </body>
 <script src="script.js"></script>
+
 </html>

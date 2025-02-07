@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/valorant-logo.png" alt="Valorant Logo" class="logo">
+            <h1>Valorant Champions Stats</h1>
+            <img src="images/vct-logo.webp" alt="Valorant Champions Tour Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="tournaments.html">Tournaments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="teams">
+        <h2>Teams Played in Champions 2024</h2>
+        <div class="pacific-teams"> <img src="images/teams/pacific.webp" alt=""> Pacific </div>
+        <div class="teams-grid">
+            <div class="team-card">
+                <img src="images/teams/drx.svg" alt="Team 1 Logo">
+                <h3>DRX</h3>
+                <p>Region: South Korea</p>
+                <p>Regional Champions</p>
+                <button class="view-more" onclick="showTeamDetails('DRX')">View More</button>
+            </div>
+
+            <div class="team-card">
+                <img src="images/teams/prx.png" alt="Team 2 Logo">
+                <h3>Paper Rex</h3>
+                <p>Region: Singapore</p>
+                <p>Regional Champions</p>
+                <button class="view-more" onclick="showTeamDetails('Paper Rex')">View More</button>
+            </div>
+
+            <div class="team-card">
+                <img src="images/teams/geng.png" alt="Team 3 Logo">
+                <h3>GEN G</h3>
+                <p>Region: South Korea</p>
+                <p>Masters 2023 Winners</p>
+                <button class="view-more" onclick="showTeamDetails('GEN G')">View More</button>
+            </div>
+
+    </section>
+
+</body>
+<script src="script.js"></script>
+
+</html>
