@@ -232,14 +232,42 @@ button {
 .teams {
     text-align: center;
     padding: 50px 20px;
+    overflow:hidden;
+    position:relative;
+    white-space: nowrap;
 }
 
 .teams-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 20px;
 }
+.teams-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: max-content; /* Twice the screen width for smooth looping */
+    animation: scrollTeams 20s linear infinite;
+}
+.teams-wrapper:nth-of-type(2) {
+    animation: scrollTeams 25s linear infinite;
+}
+
+
+@keyframes scrollTeams {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.teams-wrapper:hover {
+    animation-play-state:paused;
+}
+
 
 .team-card {
     background-color: #1e1e1e;
@@ -249,6 +277,7 @@ button {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0  auto;
 }
 
 .team-card:hover {
@@ -277,14 +306,72 @@ button {
 .view-more:hover {
     background-color: #e04050;
 }
-.pacific-teams{
+.region-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.region-logo {
+    width: 150px; 
+    height: auto;
+    padding-top: 2%;
+}
+
+
+
+
+
+
+/* players section */
+.players {
     text-align: center;
     padding: 50px 20px;
-    font-size: 20px;
 }
-.pacific-teams img{
+
+.players-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.player-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 6px rgba(255, 70, 85, 0.8);
+}
+
+.player-card img {
     width: 100px;
     height: 100px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 50%;
     margin-bottom: 10px;
+}
+
+.view-more {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.view-more:hover {
+    background-color: #e04050;
 }
