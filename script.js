@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("players-grid element found:", playersGrid);
 
     // players section
-    fetch("https://vlr.orlandomm.net/api/v1/players?event_id=2097&limit=30")
+    fetch("https://vlr.orlandomm.net/api/v1/players?event_id=2097&limit=20")
         .then(response => {
             console.log("Fetch response:", response); 
             if (!response.ok) {
