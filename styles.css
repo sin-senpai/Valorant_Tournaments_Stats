@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -27,13 +26,16 @@ header {
 }
 
 .logo-container img:hover {
-    filter: brightness(0) invert(1); /* Example filter to invert colors */
+    filter: brightness(0) invert(1); 
     transition: 0.3s ease-in-out;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
 }
 
 nav ul li {
@@ -45,10 +47,21 @@ nav ul li a {
     color: #ff4655;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+} 
+nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: #ff4655;
+        transition: width 0.3s ease-in-out;
 }
-nav ul li a:hover {
-    color: white;
-    transition: 0.3s ease-in-out;
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -193,7 +206,6 @@ button {
 .player:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px 4px rgba(122, 119, 119, 0.8);
-    /* Red glowing effect */
     border-color: rgba(114, 107, 107, 0.925);
     transition: 0.4s;
 }
@@ -217,11 +229,12 @@ button {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .cta .btn:hover {
     background-color: #292929;
+    transform: translateY(-5px);
 }
 
 
@@ -374,4 +387,12 @@ button {
 
 .view-more:hover {
     background-color: #e04050;
+}
+.player-card img.flag {
+    border-radius: 0; 
+    width: 25px; 
+    height: 15px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
 }
