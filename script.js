@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Player Data:", player);
 
                 // fallbacks for missing data
-                const username = player.user || "Unknown";
-                const profileImage = player.img || 'images/default-player.png';
+                const teamName = player.teamTag ? player.teamTag : "Free Agent";const profileImage = player.img || 'images/default-player.png';
                 const countryCode = player.country ? player.country.toLowerCase() : null;
                 const countryFlag = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : 'images/default-flag.png';
 
@@ -51,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 playerCard.innerHTML = `
                     <img src="${profileImage}" alt="${player.name} Profile">
                     <h3>${player.name}</h3>
-                    <p>Username: ${username}</p>
+                    <p>Team: ${teamName}</p>
                     <p><img src="${countryFlag}" alt="${player.country}" class="flag"></p>
-                    <button class="view-more" onclick="showPlayerDetails('${player.url}')">View More</button>
+                    <button class="view-more" onclick="showPlayerDetails('${player.id}')">View More</button>
                 `;
                 playersGrid.appendChild(playerCard);
             });
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error("Error fetching players:", error));
 });
 
-function showPlayerDetails(playerUrl) {
-    window.open(playerUrl, "_blank");
+function showPlayerDetails(playerId) {
+    window.location.href = `player.html?id=${playerId}`;
 }
-
+  

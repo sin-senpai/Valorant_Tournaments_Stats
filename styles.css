@@ -396,3 +396,65 @@ button {
     display: inline-block;
     vertical-align: middle;
 }
+
+
+
+/* 
+player section */
+
+#player-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.player-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+.event-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.flag {
+    width: 25px;
+    height: 15px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #ff4655;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #e04050;
+}
