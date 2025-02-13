@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           
             if (pastTeams.length > 0) {
-                htmlContent += "<h3>Past Teams</h3><ul>";
+                htmlContent += "<h3>Past Teams</h3><ul class='past-teams'>";
                 pastTeams.forEach(team => {
                     htmlContent += `
                         <li>
                             <img src="${team.logo || 'images/default-team.png'}" alt="${team.name}" class="team-logo">
-                            <a href="${team.url}" target="_blank">${team.name}</a> - ${team.info || ""}
+                            <span>${team.name}</span>
                         </li>
                     `;
                 });
@@ -56,13 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (results.length > 0) {
-                htmlContent += "<h3>Recent Matches</h3><ul>";
+                htmlContent += "<h3>Recent Matches</h3><ul class='recent-matches'>";
                 results.forEach(match => {
                     htmlContent += `
                         <li>
                             <img src="${match.event.logo || 'images/default-event.png'}" alt="${match.event.name}" class="event-logo">
-                            <strong>${match.event.name}</strong>
-                            <a href="${match.match.url}" target="_blank">View Match</a>
+                            <a href="${match.match.url}" target="_blank">${match.event.name}</a>
                         </li>
                     `;
                 });
@@ -70,13 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
           
-            htmlContent += "<h3>Social Media</h3>";
-            if (socials.twitter_url) {
-                htmlContent += `<p><a href="${socials.twitter_url}" target="_blank"><i class='bx bxl-twitter'></i></a></p>`;
-            }
-            if (socials.twitch_url) {
-                htmlContent += `<p><a href="${socials.twitch_url}" target="_blank"><i class='bx bxl-twitch'></i></a></p>`;
-            }
+            htmlContent += "<h3>Social Media</h3><div class='social-links'>";
+if (socials.twitter_url) {
+    htmlContent += `<a href="${socials.twitter_url}" target="_blank"><i class='bx bxl-twitter'></i></a>`;
+}
+if (socials.twitch_url) {
+    htmlContent += `<a href="${socials.twitch_url}" target="_blank"><i class='bx bxl-twitch'></i></a>`;
+}
+htmlContent += "</div>";
 
             document.getElementById("player-info").innerHTML = htmlContent;
         })
