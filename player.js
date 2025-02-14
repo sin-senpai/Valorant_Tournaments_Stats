@@ -31,52 +31,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="player-card">
                     <img src="${playerInfo.img || 'images/default-player.png'}" alt="${playerInfo.name}">
                     <h2>${playerInfo.name} (${playerInfo.user || "Unknown"})</h2>
-                  <p>
-                    <img src="${countryFlag}" alt="${playerInfo.country}" class="flag">
-                    ${playerInfo.country}
-                </p>
+                    <p>
+                        <img src="${countryFlag}" alt="${playerInfo.country}" class="flag">
+                        ${playerInfo.country}
+                    </p>
                     <p><strong>Current Team:</strong> ${team.name || "Free Agent"}</p>
                     <img src="${teamLogo}" alt="${team.name}" class="team-logo">
                     <p>Joined: ${team.joined || "N/A"}</p>
                 </div>
             `;
 
-          
+            let extraInfoContent = `<div class="extra-info">`;
+
             if (pastTeams.length > 0) {
-                htmlContent += "<h3>Past Teams</h3><ul class='past-teams'>";
+                extraInfoContent += "<h3>Past Teams</h3><ul class='past-teams'>";
                 pastTeams.forEach(team => {
-                    htmlContent += `
+                    extraInfoContent += `
                         <li>
                             <img src="${team.logo || 'images/default-team.png'}" alt="${team.name}" class="team-logo">
-                            <span>${team.name}</span>
+                            <a href="https://vlr.gg/${team.id}" target="_blank">${team.name}</a>
                         </li>
                     `;
                 });
-                htmlContent += "</ul>";
+                
+                extraInfoContent += "</ul>";
             }
 
             if (results.length > 0) {
-                htmlContent += "<h3>Recent Matches</h3><ul class='recent-matches'>";
+                extraInfoContent += "<h3>Recent Matches</h3><ul class='recent-matches'>";
                 results.forEach(match => {
-                    htmlContent += `
+                    extraInfoContent += `
                         <li>
                             <img src="${match.event.logo || 'images/default-event.png'}" alt="${match.event.name}" class="event-logo">
                             <a href="${match.match.url}" target="_blank">${match.event.name}</a>
                         </li>
                     `;
                 });
-                htmlContent += "</ul>";
+                extraInfoContent += "</ul>";
             }
 
-          
-            htmlContent += "<h3>Social Media</h3><div class='social-links'>";
-if (socials.twitter_url) {
-    htmlContent += `<a href="${socials.twitter_url}" target="_blank"><i class='bx bxl-twitter'></i></a>`;
-}
-if (socials.twitch_url) {
-    htmlContent += `<a href="${socials.twitch_url}" target="_blank"><i class='bx bxl-twitch'></i></a>`;
-}
-htmlContent += "</div>";
+            extraInfoContent += "</div>"; 
+
+            htmlContent += extraInfoContent;
+
+            htmlContent += "<div class='social-media'>";
+            htmlContent += "<h3>Social Media</h3>";
+            htmlContent += "<div class='social-links'>";
+            if (socials.twitter_url) {
+                htmlContent += `<a href="${socials.twitter_url}" target="_blank"><i class='bx bxl-twitter'></i></a>`;
+            }
+            if (socials.twitch_url) {
+                htmlContent += `<a href="${socials.twitch_url}" target="_blank"><i class='bx bxl-twitch'></i></a>`;
+            }
+            htmlContent += "</div></div>";
+            
 
             document.getElementById("player-info").innerHTML = htmlContent;
         })
