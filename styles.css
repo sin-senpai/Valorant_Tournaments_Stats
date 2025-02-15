@@ -20,8 +20,7 @@ header {
     align-items: center;
     gap: 15px;
 }
-
-.logo {
+.logo{
     height: 50px;
 }
 
@@ -30,6 +29,8 @@ header {
     transition: 0.3s ease-in-out;
 }
 
+
+/* default navigation on desktop */
 nav ul {
     list-style: none;
     padding: 0;
@@ -48,21 +49,76 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     position: relative;
-} 
+}
+
 nav ul li a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        background: #ff4655;
-        transition: width 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #ff4655;
+    transition: width 0.3s ease-in-out;
 }
 
 nav ul li a:hover::after {
     width: 100%;
 }
+
+/* mobile navigation */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        background: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-20px); 
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+    .nav-links.active {
+        display: flex; 
+        opacity: 1;
+        transform: translateY(0); 
+        pointer-events: auto;
+       
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+    }
+    .logo {
+        width: 40px;
+        height: auto;
+    }
+    
+    .header-content {
+        flex-wrap: wrap; 
+    }
+    h1{
+        font-size: medium;
+    }
+}
+
 
 /* Hero Section */
 /* .hero{
@@ -514,6 +570,7 @@ button {
     padding: 0;
     margin: 0;
     width: 100%;
+    animation: fadeIn 0.7s ease-in-out;
 }
 
 #player-info .recent-matches li {
@@ -526,13 +583,35 @@ button {
     width: 100%;
 }
 
-
-#player-info .social-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.social-media {
+    text-align: left; 
+    margin-top: -100px;
 }
+@media (max-width: 768px) {
+    .social-media {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+#player-info .social-links {
+        display: flex;
+        justify-content: left; 
+        gap: 15px;
+        margin-top: 10px;
+ }
+ .social-icons {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-start; 
+    margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center;
+    }
+} 
 #player-info  .social-links a {
     display: inline-flex;
     align-items: center;
@@ -573,8 +652,25 @@ button {
     object-fit: contain;
     margin-right: 10px;
 }
+#player-info .past-teams a,
+#player-info .recent-matches a {
+    color: #ff4655; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;  
+}
+
+#player-info .past-teams a:hover,
+#player-info .recent-matches a:hover {
+    color: #e04050; 
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+

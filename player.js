@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (socials.twitch_url) {
                 htmlContent += `<a href="${socials.twitch_url}" target="_blank"><i class='bx bxl-twitch'></i></a>`;
             }
-            htmlContent += "</div></div>";
+           htmlContent += "</div></div>";
             
 
             document.getElementById("player-info").innerHTML = htmlContent;

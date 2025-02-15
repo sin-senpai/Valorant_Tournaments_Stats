@@ -17,6 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Video element not found");
     }
 
+    // mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    } else {
+        console.warn("Menu elements not found");
+    }
+
+    // fetch Players Data
     const playersGrid = document.getElementById("players-grid");
     if (!playersGrid) {
         console.error("Element with ID 'players-grid' not found.");
@@ -24,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     console.log("players-grid element found:", playersGrid);
 
-    // players section
     fetch("https://vlr.orlandomm.net/api/v1/players?event=2097&timespan=all&limit=all")
         .then(response => {
             console.log("Fetch response:", response);
@@ -41,9 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Player Data:", player);
 
                 // fallbacks for missing data
-                const teamName = player.teamTag ? player.teamTag : "Free Agent";const profileImage = player.img || 'images/default-player.png';
+                const teamName = player.teamTag ? player.teamTag : "Free Agent";
+                const profileImage = player.img || "images/default-player.png";
                 const countryCode = player.country ? player.country.toLowerCase() : null;
-                const countryFlag = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : 'images/default-flag.png';
+                const countryFlag = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : "images/default-flag.png";
 
                 const playerCard = document.createElement("div");
                 playerCard.classList.add("player-card");
@@ -63,4 +76,3 @@ document.addEventListener("DOMContentLoaded", () => {
 function showPlayerDetails(playerId) {
     window.location.href = `player.html?id=${playerId}`;
 }
-  
