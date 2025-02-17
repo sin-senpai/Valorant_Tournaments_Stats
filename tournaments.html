@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/valorant-logo.png" alt="Valorant Logo" class="logo">
+            <h1>Valorant Champions Stats</h1>
+            <img src="images/vct-logo.webp" alt="Valorant Champions Tour Logo" class="logo">
+        </div>
+    
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="tournaments.html">Tournaments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="tournament-cards">
+        <h2>Past Valorant Champions</h2>
+        <div class="cards-container" id="tournament-list">
+            
+        </div>
+    </section>
+    
+    
+    <div id="tournament-details" class="hidden">
+        <button class="close-btn" onclick="closeDetails()">✖</button>
+        <h2 id="tournament-year"></h2>
+        <img id="bracket-image" src="" alt="Tournament Bracket">
+        <p id="tournament-info"></p>
+    </div>
+    
+    <script src="tournaments.js"></script>
+</body>
+
+</html>
